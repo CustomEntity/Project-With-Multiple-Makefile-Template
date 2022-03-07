@@ -1,6 +1,6 @@
 ##
 ## EPITECH PROJECT, 2021
-## MyDefender - 2D Tower Defense Game
+## template
 ## File description:
 ## Makefile
 ##
