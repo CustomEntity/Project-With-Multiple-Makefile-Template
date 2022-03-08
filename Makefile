@@ -24,14 +24,13 @@ common_lib :
 re : fclean all
 
 fclean : clean
-	@ make -C ./maze_solver/ fclean --no-print-directory
-	@ make -C ./maze_generator/ fclean --no-print-directory
-	@ make -C ./common/ fclean --no-print-directory
-	@ rm -rf ./generator
-	@ rm -rf ./solver
+	@ $(MAKE) -C ./maze_solver/ fclean --no-print-directory
+	@ $(MAKE) -C ./maze_generator/ fclean --no-print-directory
+	@ $(MAKE) -C ./common/ fclean --no-print-directory
+	@ $(RM) -rf ./generator
+	@ $(RM) -rf ./solver
 
 clean :
-	@ make -C ./maze_solver/ clean --no-print-directory
-	@ make -C ./maze_generator/ clean --no-print-directory
-	@ make -C ./common/ clean --no-print-directory
-
+	@ $(MAKE) -C ./maze_solver/ clean --no-print-directory
+	@ $(MAKE) -C ./maze_generator/ clean --no-print-directory
+	@ $(MAKE) -C ./common/ clean --no-print-directory
