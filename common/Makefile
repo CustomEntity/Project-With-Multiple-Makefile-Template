@@ -12,24 +12,25 @@ SRC_DIRS = ./src
 SRCS := $(shell find $(SRC_DIRS) -name "*.c")
 OBJS = $(SRCS:.c=.o)
 
-CFLAGS = -I./include
+CFLAGS = -W -Wall -Wextra -Werror
+CPPFLAGS = -I./include
 
 LIB = libcommons.a
 
 all : $(LIB)
 
 $(LIB) : $(OBJS)
-	@ ar src $(LIB) $+
+	@ $(AR) src $(LIB) $+
 
 %.o :	%.c
-	@ $(CC) -o $@ -c $< $(CFLAGS)
+	@ $(CC) -o $@ -c $< $(CFLAGS) $(CPPFLAGS)
 
 re : fclean all
 
 fclean : clean
-	@ rm -rf $(LIB)
+	@ $(RM) -rf $(LIB)
 
 clean :
-	@ rm -rf $(OBJS)
-	@ rm -rf *.gcda
-	@ rm -rf *.gcno
+	@ $(RM) -rf $(OBJS)
+	@ $(RM) -rf *.gcda
+	@ $(RM) -rf *.gcno
