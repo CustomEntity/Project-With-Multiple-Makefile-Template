@@ -21,7 +21,7 @@ LDFLAGS	=	-L../common/
 LDLIBS = -lcommons
 
 all : $(BIN)
-	@ $(MV) $(BIN) ../
+	@ mv $(BIN) ../
 
 $(BIN) : $(OBJS)
 	@ $(CC) $(OBJS) -o $(BIN) $(LDFLAGS) $(LDLIBS)
